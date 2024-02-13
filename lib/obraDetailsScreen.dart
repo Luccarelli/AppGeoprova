@@ -113,46 +113,49 @@ class DetalhesObraScreen extends StatelessWidget {
               _buildContactInfo(
                   'Observação', observacao.isNotEmpty ? observacao : '-'),
               SizedBox(height: 20),
- Row(
-  children: [
-    Expanded(
-      flex: 1,
-      child: ElevatedButton(
-        onPressed: () {
-          final url = 'tel://${celular.replaceAll(RegExp(r'[^0-9]'), '')}';
-          launch(url);
-        },
-        child: Icon(Icons.phone),
-      ),
-    ),
-    SizedBox(width: 8.0), // Espaçamento entre os botões
-    Expanded(
-      flex: 1,
-      child: ElevatedButton(
-        onPressed: () {
-          _launchLink('mailto:${email}');
-        },
-        child: Icon(Icons.mail),
-      ),
-    ),
-    SizedBox(width: 8.0), // Espaçamento entre os botões
-    Expanded(
-      flex: 1,
-      child: ElevatedButton(
-        onPressed: () {
-          final whatsappUrl = 'https://api.whatsapp.com/send?phone=${celular.replaceAll(RegExp(r'[^0-9]'), '')}';
-          launch(whatsappUrl);
-        },
-        child: Image.asset(
-          'assets/img/whatsapp.png', // Substitua com o caminho correto para o ícone do WhatsApp
-          width: 24.0, // Ajuste o tamanho do ícone conforme necessário
-          height: 24.0, // Ajuste o tamanho do ícone conforme necessário
-        ),
-      ),
-    ),
-  ],
-)
-
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final url =
+                            'tel://${celular.replaceAll(RegExp(r'[^0-9]'), '')}';
+                        launch(url);
+                      },
+                      child: Icon(Icons.phone),
+                    ),
+                  ),
+                  SizedBox(width: 8.0), // Espaçamento entre os botões
+                  Expanded(
+                    flex: 1,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _launchLink('mailto:${email}');
+                      },
+                      child: Icon(Icons.mail),
+                    ),
+                  ),
+                  SizedBox(width: 8.0), // Espaçamento entre os botões
+                  Expanded(
+                    flex: 1,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final whatsappUrl =
+                            'https://api.whatsapp.com/send?phone=${celular.replaceAll(RegExp(r'[^0-9]'), '')}';
+                        launch(whatsappUrl);
+                      },
+                      child: Image.asset(
+                        'assets/img/whatsapp.png', // Substitua com o caminho correto para o ícone do WhatsApp
+                        width:
+                            24.0, // Ajuste o tamanho do ícone conforme necessário
+                        height:
+                            24.0, // Ajuste o tamanho do ícone conforme necessário
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ));
@@ -210,6 +213,7 @@ class DetalhesObraScreen extends StatelessWidget {
             _buildInfoRow('Cidade', obraSelecionada.cidade),
             _buildInfoRow('Endereço', obraSelecionada.endereco),
             _buildInfoRow('Número', obraSelecionada.num),
+            _buildInfoRow('Complemento', obraSelecionada.complemento),
             _buildInfoRow(
                 'CEP',
                 TextMask(pallet: '#####-###')

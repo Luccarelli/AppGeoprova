@@ -10,6 +10,7 @@ import 'api_requests.dart';
 
 class ObrasFavoritas extends StatefulWidget {
   @override
+  const ObrasFavoritas({Key? key}) : super(key: key);
   _ObrasFavoritas createState() => _ObrasFavoritas();
 }
 

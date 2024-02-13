@@ -29,6 +29,7 @@ class ObrasData {
   final String endereco;
   final String num;
   final String cidade;
+  final String complemento;
   final String cep;
   final String nomeCliente;
   final String nomeContratante;
@@ -42,6 +43,7 @@ class ObrasData {
     required this.endereco,
     required this.num,
     required this.cidade,
+    required this.complemento,
     required this.cep,
     required this.nomeCliente,
     required this.nomeContratante,
@@ -58,6 +60,7 @@ class ObrasData {
       num: json['num'],
       cidade: json['cidade'],
       cep: json['cep'],
+      complemento: json['complemento'],
       nomeCliente: json['nome_cliente'],
       nomeContratante: json['nome_contratante'],
       codContrato: json['cod_contrato'],
